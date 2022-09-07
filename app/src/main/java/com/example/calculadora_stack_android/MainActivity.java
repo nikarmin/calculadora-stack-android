@@ -1,4 +1,4 @@
-package br.unicamp.calculadora_stack;
+package com.example.calculadora_stack_android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -26,6 +26,6 @@ public class MainActivity extends AppCompatActivity {
     {
         Button btn = (Button) view;
         String caractere = btn.getText().toString();
-        Toast.makeText(MainActivity.this, caractere, Toast.LENGTH_LONG).show();
+        Toast.makeText(MainActivity.this, caractere, Toast.LENGTH_SHORT).show();
     }
 }
