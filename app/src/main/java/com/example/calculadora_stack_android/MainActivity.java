@@ -34,12 +34,20 @@ public class MainActivity extends AppCompatActivity
         {
             case '=':
                 // calcular a expressao
-                try
+                String expressao = edtVisor.getText().toString();
+                if (!expressao.equals("") && VerificadorDeBalanceamento.estaBalanceada(expressao))
                 {
-                    String result = ConversorPosfixa.converter("A+B");
-                    Toast.makeText(MainActivity.this, result, Toast.LENGTH_LONG).show();
+                    try
+                    {
+                        String result = ConversorPosfixa.converter("A+B");
+                        Toast.makeText(MainActivity.this, result, Toast.LENGTH_LONG).show();
+                    }
+                    catch (Exception err)
+                    {
+                        Toast.makeText(MainActivity.this, "Exp invalida", Toast.LENGTH_LONG).show();
+                    }
                 }
-                catch (Exception err)
+                else
                 {
                     Toast.makeText(MainActivity.this, "Exp invalida", Toast.LENGTH_LONG).show();
                 }
