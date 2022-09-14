@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Stack;
 
 public class CalculadoraStack {
-
         private List<Double> operandos; // lista com os operandos da expressão
         private Stack<Double> pilhaValor; // auxilia no cálculo do valor da expressão
         private String expPosfix, expInfx; // guarda a expressão posfixa e infixa

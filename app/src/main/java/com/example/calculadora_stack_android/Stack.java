@@ -9,5 +9,5 @@ public interface Stack<D> {
     int getTamanho();                 // informa a quantidade de itens empilhados
     boolean estaVazia();              // informa se a pilha está ou não vazia
     List<D> dadosDaPilha();           // percorre a pilha e retorna uma lista com todos os itens empilhados,
-    // sem alterar o conteúdo da pilha
+                                      // sem alterar o conteúdo da pilha
 }
