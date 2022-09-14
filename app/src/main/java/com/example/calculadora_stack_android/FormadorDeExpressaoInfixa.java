@@ -5,7 +5,7 @@ import java.util.List;
 
 public class FormadorDeExpressaoInfixa
 {
-    private static String formarExpressaoInfixa(String expressao) throws Exception
+    public static String formarExpressaoInfixa(String expressao) throws Exception
     {
         String expInfix = "";
         List<Double> operandos = new ArrayList<Double>();
@@ -13,7 +13,7 @@ public class FormadorDeExpressaoInfixa
         for (int i = 0; i < expressao.length(); i++)
         {
             char charAtual = expressao.charAt(i);
-            if (EhOperador(charAtual))
+            if (ehOperador(charAtual))
             {
                 boolean ehUnario = false;
                 if (charAtual != '(' && charAtual != ')')
@@ -47,7 +47,7 @@ public class FormadorDeExpressaoInfixa
                 String operando = "";
 
                 int c = i;
-                while (c != expressao.length() && !EhOperador(expressao.charAt(c)))
+                while (c != expressao.length() && !ehOperador(expressao.charAt(c)))
                 {
                     operando += expressao.charAt(c);
 
@@ -67,5 +67,10 @@ public class FormadorDeExpressaoInfixa
         }
 
         return expInfix;
+    }
+
+    private static boolean ehOperador (Character c)
+    {
+        return "/*-+()^@#".contains(c.toString());
     }
 }

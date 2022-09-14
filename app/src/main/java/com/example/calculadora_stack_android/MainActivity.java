@@ -60,8 +60,8 @@ public class MainActivity extends AppCompatActivity
                 break;
             default:
                 // adicionamos o dígito selecionado no visor
-                String expressao = edtVisor.getText().toString() + c;
-                edtVisor.setText(expressao);
+                String exp = edtVisor.getText().toString() + c;
+                edtVisor.setText(exp);
                 break;
         }
     }
