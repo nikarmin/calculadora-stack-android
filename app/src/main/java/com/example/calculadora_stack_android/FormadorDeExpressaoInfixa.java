@@ -5,10 +5,16 @@ import java.util.List;
 
 public class FormadorDeExpressaoInfixa
 {
+    public static List<Double> getOperandos() {
+        return operandos;
+    }
+
+    private static List<Double> operandos;
+
     public static String formarExpressaoInfixa(String expressao) throws Exception
     {
         String expInfix = "";
-        List<Double> operandos = new ArrayList<Double>();
+        operandos = new ArrayList<Double>();
 
         for (int i = 0; i < expressao.length(); i++)
         {
@@ -68,6 +74,37 @@ public class FormadorDeExpressaoInfixa
 
         return expInfix;
     }
+
+    /*double valorDaExpressaoPosfixa(String cadeiaPosfixa) throws Exception {
+        PilhaLista<Double> pilha = new PilhaLista<Double>();
+
+        for (int i = 0; i < cadeiaPosfixa.length(); i++)
+        {
+            char simbol = cadeiaPosfixa.charAt(i);
+
+            if (!ehOperador(simbol))
+                pilha.empilhar(operandos.get(simbol - 'A'));
+            else
+            {
+                try {
+                    if (simbol == '@')
+                        pilha.empilhar(-pilha.desempilhar());
+                    else if (simbol == '#')
+                        continue;
+                    else
+                    {
+                        double operando1 = pilha.desempilhar();
+                        double operando2 = pilha.desempilhar();
+                        double valor = valorDaSubExpressao();
+                        pilha.empilhar(valor);
+                    }
+                }
+                catch (Exception err){}
+            }
+        }
+
+        return pilha.desempilhar();
+    }*/
 
     private static boolean ehOperador (Character c)
     {

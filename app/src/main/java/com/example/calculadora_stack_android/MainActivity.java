@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.Normalizer;
+
 public class MainActivity extends AppCompatActivity
 {
     EditText edtVisor;
@@ -39,8 +41,10 @@ public class MainActivity extends AppCompatActivity
                 {
                     try
                     {
-                        String result = ConversorPosfixa.converter("A+B");
-                        Toast.makeText(MainActivity.this, result, Toast.LENGTH_LONG).show();
+                        String expInfixa = FormadorDeExpressaoInfixa.formarExpressaoInfixa(expressao);
+                        String result = ConversorPosfixa.converter(expInfixa);
+                        Double teste = ConversorPosfixa.valorDaExpressaoPosfixa(result, FormadorDeExpressaoInfixa.getOperandos());
+                        Toast.makeText(MainActivity.this, teste.toString(), Toast.LENGTH_LONG).show();
                     }
                     catch (Exception err)
                     {
@@ -49,7 +53,7 @@ public class MainActivity extends AppCompatActivity
                 }
                 else
                 {
-                    Toast.makeText(MainActivity.this, "Exp invalida", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "A expressão está incorreta!", Toast.LENGTH_LONG).show();
                 }
                 break;
             case 'C':
