@@ -42,9 +42,20 @@ public class MainActivity extends AppCompatActivity
                     try
                     {
                         String expInfixa = FormadorDeExpressaoInfixa.formarExpressaoInfixa(expressao);
-                        String result = ConversorPosfixa.converter(expInfixa);
-                        Double teste = ConversorPosfixa.valorDaExpressaoPosfixa(result, FormadorDeExpressaoInfixa.getOperandos());
-                        Toast.makeText(MainActivity.this, teste.toString(), Toast.LENGTH_LONG).show();
+                        String expPosfixa = ConversorPosfixa.converter(expInfixa);
+                        Double resultado = ConversorPosfixa.valorDaExpressaoPosfixa(expPosfixa, FormadorDeExpressaoInfixa.getOperandos());
+
+
+                        expInfixa = expInfixa.replace('@', '-').replace('#', '+');
+                        expPosfixa = expPosfixa.replace('@', '-').replace('#', '+');
+
+                        edtVisor.setText(resultado.toString());
+                        String posfxInfx = "PÓSFIXA/INFIXA: " + expInfixa + " | " + expPosfixa;
+
+                        tvPosInfi.setText(posfxInfx);
+                        tvResultado.setText("RESULTADO: " + resultado);
+
+                        //Toast.makeText(MainActivity.this, resultado.toString(), Toast.LENGTH_LONG).show();
                     }
                     catch (Exception err)
                     {

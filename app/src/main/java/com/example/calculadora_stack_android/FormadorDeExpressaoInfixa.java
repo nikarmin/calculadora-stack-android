@@ -55,7 +55,10 @@ public class FormadorDeExpressaoInfixa
                 int c = i;
                 while (c != expressao.length() && !ehOperador(expressao.charAt(c)))
                 {
-                    operando += expressao.charAt(c);
+                    if (expressao.charAt(c) == ',')
+                        operando += '.';
+                    else
+                        operando += expressao.charAt(c);
 
                     c++;
                 }
