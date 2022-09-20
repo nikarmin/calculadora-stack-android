@@ -50,16 +50,16 @@ public class MainActivity extends AppCompatActivity
                         expPosfixa = expPosfixa.replace('@', '-').replace('#', '+');
 
                         edtVisor.setText(resultado.toString());
-                        String posfxInfx = "PÓSFIXA/INFIXA: " + expInfixa + " | " + expPosfixa;
+                        String posfxInfx = "Pósfixa / Infixa: " + expInfixa + " | " + expPosfixa;
 
                         tvPosInfi.setText(posfxInfx);
-                        tvResultado.setText("RESULTADO: " + resultado);
+                        tvResultado.setText("Resultado: " + resultado);
 
                         //Toast.makeText(MainActivity.this, resultado.toString(), Toast.LENGTH_LONG).show();
                     }
                     catch (Exception err)
                     {
-                        Toast.makeText(MainActivity.this, "Exp invalida", Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, "A expressão está incorreta!", Toast.LENGTH_LONG).show();
                     }
                 }
                 else
@@ -70,8 +70,8 @@ public class MainActivity extends AppCompatActivity
             case 'C':
                 // resetamos a tela
                 edtVisor.setText("");
-                tvResultado.setText("RESULTADO:");
-                tvPosInfi.setText("PÓSFIXA/INFIXA:");
+                tvResultado.setText("Resultado:");
+                tvPosInfi.setText("Pósfixa / Infixa:");
                 break;
             default:
                 // adicionamos o dígito selecionado no visor
