@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#131212"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -71,15 +71,25 @@
         android:layout_marginTop="28dp"
         android:layout_marginRight="5dp"
         android:textColor="@color/black"
-        android:background="@drawable/edtradius"
         android:focusable="false"
-        android:hint="3+(5*5)^2"
+        android:hint="Digite sua expressão..."
         android:textColorHint="#2F757575"
         android:padding="15dp"
         android:maxLength="150"
         android:textSize="22dp"
         android:layout_alignParentTop="true"/>
 
+    <!--
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tlCalculadora"
+        android:layout_alignRight="@id/tvResultado"
+        android:src="@android:drawable/ic_input_delete"
+        android:backgroundTint="@color/white"
+        android:layout_marginRight="8dp"
+    />
+    -->
     <TextView
         android:id="@+id/tvResultado"
         android:layout_width="match_parent"
@@ -87,11 +97,14 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="5dp"
         android:layout_marginTop="50dp"
-        android:textColor="#646464"
+        android:textColor="@color/white"
+        android:fontFamily="@font/jost"
         android:text="Resultado:"
         android:textSize="16dp"
-        android:layout_above="@+id/tlCalculadora"
+        android:layout_above="@id/tlCalculadora"
         />
+
+    <!--android:layout_above="@+id/btnA"-->
 
     <TextView
         android:id="@+id/tvPosInfi"
@@ -101,11 +114,25 @@
         android:layout_marginRight="5dp"
         android:layout_marginTop="14dp"
         android:layout_marginBottom="40dp"
-        android:textColor="#646464"
+        android:textColor="@color/white"
+        android:fontFamily="@font/jost"
         android:text="Pósfixa / Infixa:"
         android:textSize="16dp"
         android:layout_alignBottom="@+id/tvResultado"
         />
+
+    <!--
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tlCalculadora"
+        android:layout_alignRight="@id/tvResultado"
+        android:src="@android:drawable/ic_input_delete"
+        android:backgroundTint="@color/white"
+        android:layout_marginRight="8dp"
+        />
+    -->
 
     <TableLayout
         android:id="@+id/tlCalculadora"
@@ -118,46 +145,53 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center">
+            android:gravity="center"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnDivisao"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="#F8CB45"
+                android:background="@drawable/edtradius"
+                android:backgroundTint="#35328C"
                 android:onClick="clickBotao"
                 android:text="/"
                 android:textColor="@color/black"
-                android:textSize="18dp" />
+                android:textSize="18dp"
+                />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnSubstracao"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="#F8CB45"
+                android:background="@drawable/edtradius"
+                android:backgroundTint="#35328C"
                 android:onClick="clickBotao"
                 android:text="-"
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnExponenciacao"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="#F8CB45"
+                android:background="@drawable/edtradius"
+                android:backgroundTint="#35328C"
                 android:onClick="clickBotao"
                 android:text="^"
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnMultiplicacao"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:backgroundTint="#F8CB45"
+                android:background="@drawable/edtradius"
+                android:backgroundTint="#35328C"
                 android:onClick="clickBotao"
                 android:text="*"
                 android:textColor="@color/black"
@@ -167,46 +201,51 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center">
+            android:gravity="center"
+            android:layout_marginBottom="5dp">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnSete"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="#F8CB45"
+                android:background="@drawable/edtradius"
+                android:backgroundTint="#454893"
                 android:onClick="clickBotao"
                 android:text="7"
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnOito"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="#F8CB45"
+                android:background="@drawable/edtradius"
+                android:backgroundTint="#454893"
                 android:onClick="clickBotao"
                 android:text="8"
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnNove"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="#F8CB45"
+                android:background="@drawable/edtradius"
+                android:backgroundTint="#454893"
                 android:onClick="clickBotao"
                 android:text="9"
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnAdicao"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:backgroundTint="#F8CB45"
+                android:background="@drawable/edtradius"
+                android:backgroundTint="#35328C"
                 android:onClick="clickBotao"
                 android:text="+"
                 android:textColor="@color/black"
@@ -217,46 +256,51 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center">
+            android:gravity="center"
+            android:layout_marginBottom="5dp">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnQuatro"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="#F8CB45"
+                android:background="@drawable/edtradius"
+                android:backgroundTint="#454893"
                 android:onClick="clickBotao"
                 android:text="4"
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnCinco"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="#F8CB45"
+                android:background="@drawable/edtradius"
+                android:backgroundTint="#454893"
                 android:onClick="clickBotao"
                 android:text="5"
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnSeis"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="#F8CB45"
+                android:background="@drawable/edtradius"
+                android:backgroundTint="#454893"
                 android:onClick="clickBotao"
                 android:text="6"
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnVirgula"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:backgroundTint="#F8CB45"
+                android:background="@drawable/edtradius"
+                android:backgroundTint="#35328C"
                 android:onClick="clickBotao"
                 android:text=","
                 android:textColor="@color/black"
@@ -267,46 +311,51 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center">
+            android:gravity="center"
+            android:layout_marginBottom="5dp">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnUm"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="#F8CB45"
+                android:background="@drawable/edtradius"
+                android:backgroundTint="#454893"
                 android:onClick="clickBotao"
                 android:text="1"
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnDois"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="#F8CB45"
+                android:background="@drawable/edtradius"
+                android:backgroundTint="#454893"
                 android:onClick="clickBotao"
                 android:text="2"
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnTres"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="#F8CB45"
+                android:background="@drawable/edtradius"
+                android:backgroundTint="#454893"
                 android:onClick="clickBotao"
                 android:text="3"
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnAbreParenteses"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:backgroundTint="#F8CB45"
+                android:background="@drawable/edtradius"
+                android:backgroundTint="#35328C"
                 android:onClick="clickBotao"
                 android:text="("
                 android:textColor="@color/black"
@@ -319,44 +368,48 @@
             android:layout_height="match_parent"
             android:gravity="center">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnZero"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="#F8CB45"
+                android:background="@drawable/edtradius"
+                android:backgroundTint="#454893"
                 android:onClick="clickBotao"
                 android:text="0"
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnIgual"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="#F8CB45"
+                android:background="@drawable/edtradius"
+                android:backgroundTint="#35328C"
                 android:onClick="clickBotao"
                 android:text="="
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnLimpar"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="#FD8F6C"
+                android:background="@drawable/edtradius"
+                android:backgroundTint="#8C9E3D"
                 android:onClick="clickBotao"
                 android:text="C"
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnFechaParenteses"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:backgroundTint="#F8CB45"
+                android:background="@drawable/edtradius"
+                android:backgroundTint="#35328C"
                 android:onClick="clickBotao"
                 android:text=")"
                 android:textColor="@color/black"
