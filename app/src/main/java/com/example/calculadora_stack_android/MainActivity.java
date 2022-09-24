@@ -39,9 +39,6 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
 
-                /*Toast toast = new Toast(getApplicationContext());
-                ImageView view = new ImageView(getApplicationContext());*/
-
                 if (edtVisor.length() == 0) {
                     LayoutInflater inflater = getLayoutInflater();
                     View layout = inflater.inflate(R.layout.toast,
@@ -50,7 +47,7 @@ public class MainActivity extends AppCompatActivity
                     ImageView image = (ImageView) layout.findViewById(R.id.image);
                     image.setImageResource(R.drawable.emoji);
                     TextView text = (TextView) layout.findViewById(R.id.text);
-                    text.setText("Digite alguma coisa!");
+                    text.setText("Digite alguma coisa! ( •̀ ω •́ )✧");
 
                     Toast toast = new Toast(getApplicationContext());
                     toast.setGravity(Gravity.BOTTOM, 0, 0);
