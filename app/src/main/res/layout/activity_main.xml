@@ -88,6 +88,8 @@
         android:layout_alignEnd="@id/tlCalculadora"
         android:layout_marginRight="18dp"
         android:layout_marginBottom="2dp"
+        android:outlineAmbientShadowColor="@android:color/transparent"
+        android:outlineSpotShadowColor="@android:color/transparent"
         app:borderWidth="0dp"
         android:src="@drawable/clear"
         app:fabSize="auto"
