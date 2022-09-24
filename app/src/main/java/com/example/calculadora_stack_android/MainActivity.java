@@ -2,7 +2,6 @@ package com.example.calculadora_stack_android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -50,7 +49,7 @@ public class MainActivity extends AppCompatActivity
                     text.setText("Digite alguma coisa! ( •̀ ω •́ )✧");
 
                     Toast toast = new Toast(getApplicationContext());
-                    toast.setGravity(Gravity.BOTTOM, 0, 0);
+                    toast.setGravity(Gravity.BOTTOM, 0, 20);
                     toast.setDuration(Toast.LENGTH_SHORT);
                     toast.setView(layout);
                     toast.show();
@@ -80,8 +79,7 @@ public class MainActivity extends AppCompatActivity
                     {
                         String expInfixa = FormadorDeExpressaoInfixa.formarExpressaoInfixa(expressao);
                         String expPosfixa = ConversorPosfixa.converter(expInfixa);
-                        Double resultado = ConversorPosfixa.valorDaExpressaoPosfixa(expPosfixa, FormadorDeExpressaoInfixa.getOperandos());
-
+                        Double resultado = CalculadoraPosfixa.valorDaExpressaoPosfixa(expPosfixa, FormadorDeExpressaoInfixa.getOperandos());
 
                         expInfixa = expInfixa.replace('@', '-').replace('#', '+');
                         expPosfixa = expPosfixa.replace('@', '-').replace('#', '+');
@@ -91,17 +89,41 @@ public class MainActivity extends AppCompatActivity
 
                         tvPosInfi.setText(posfxInfx);
                         tvResultado.setText("Resultado: " + resultado);
-
-                        //Toast.makeText(MainActivity.this, resultado.toString(), Toast.LENGTH_LONG).show();
                     }
                     catch (Exception err)
                     {
-                        Toast.makeText(MainActivity.this, "A expressão está incorreta!", Toast.LENGTH_LONG).show();
+                        LayoutInflater inflater = getLayoutInflater();
+                        View layout = inflater.inflate(R.layout.toast,
+                                (ViewGroup) findViewById(R.id.toast_layout_root));
+
+                        ImageView image = (ImageView) layout.findViewById(R.id.image);
+                        image.setImageResource(R.drawable.emoji_excecao);
+                        TextView text = (TextView) layout.findViewById(R.id.text);
+                        text.setText("A expressão está incorreta!");
+
+                        Toast toast = new Toast(getApplicationContext());
+                        toast.setGravity(Gravity.BOTTOM, 0, 20);
+                        toast.setDuration(Toast.LENGTH_SHORT);
+                        toast.setView(layout);
+                        toast.show();
                     }
                 }
                 else
                 {
-                    Toast.makeText(MainActivity.this, "A expressão está incorreta!", Toast.LENGTH_LONG).show();
+                    LayoutInflater inflater = getLayoutInflater();
+                    View layout = inflater.inflate(R.layout.toast,
+                            (ViewGroup) findViewById(R.id.toast_layout_root));
+
+                    ImageView image = (ImageView) layout.findViewById(R.id.image);
+                    image.setImageResource(R.drawable.emoji_excecao);
+                    TextView text = (TextView) layout.findViewById(R.id.text);
+                    text.setText("A expressão está incorreta!");
+
+                    Toast toast = new Toast(getApplicationContext());
+                    toast.setGravity(Gravity.BOTTOM, 0, 20);
+                    toast.setDuration(Toast.LENGTH_SHORT);
+                    toast.setView(layout);
+                    toast.show();
                 }
                 break;
             case 'C':
@@ -111,7 +133,7 @@ public class MainActivity extends AppCompatActivity
                 tvPosInfi.setText("Pósfixa / Infixa:");
                 break;
             default:
-                // adicionamos o dígito selecionado no visor
+                // exibimos o dígito selecionado no visor
                 String exp = edtVisor.getText().toString() + c;
                 edtVisor.setText(exp);
                 break;

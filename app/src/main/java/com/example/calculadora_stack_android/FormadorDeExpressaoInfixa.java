@@ -42,7 +42,6 @@ public class FormadorDeExpressaoInfixa
                     else if (charAtual == '+')
                         expInfix += '#';
                     else
-                        // tem que ver como analisar isso no verificar validez da expressao
                         throw new Exception("Expressao inválida!");
                 }
                 else
@@ -77,37 +76,6 @@ public class FormadorDeExpressaoInfixa
 
         return expInfix;
     }
-
-    /*double valorDaExpressaoPosfixa(String cadeiaPosfixa) throws Exception {
-        PilhaLista<Double> pilha = new PilhaLista<Double>();
-
-        for (int i = 0; i < cadeiaPosfixa.length(); i++)
-        {
-            char simbol = cadeiaPosfixa.charAt(i);
-
-            if (!ehOperador(simbol))
-                pilha.empilhar(operandos.get(simbol - 'A'));
-            else
-            {
-                try {
-                    if (simbol == '@')
-                        pilha.empilhar(-pilha.desempilhar());
-                    else if (simbol == '#')
-                        continue;
-                    else
-                    {
-                        double operando1 = pilha.desempilhar();
-                        double operando2 = pilha.desempilhar();
-                        double valor = valorDaSubExpressao();
-                        pilha.empilhar(valor);
-                    }
-                }
-                catch (Exception err){}
-            }
-        }
-
-        return pilha.desempilhar();
-    }*/
 
     private static boolean ehOperador (Character c)
     {
