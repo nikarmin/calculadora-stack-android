@@ -70,33 +70,38 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="28dp"
         android:layout_marginRight="5dp"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:focusable="false"
         android:hint="Digite sua expressão..."
-        android:textColorHint="#2F757575"
+        android:textColorHint="#AB757575"
         android:padding="15dp"
         android:maxLength="150"
         android:textSize="22dp"
         android:layout_alignParentTop="true"/>
 
-    <!--
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnDelete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/tlCalculadora"
-        android:layout_alignRight="@id/tvResultado"
-        android:src="@android:drawable/ic_input_delete"
-        android:backgroundTint="@color/white"
-        android:layout_marginRight="8dp"
-    />
-    -->
+        android:layout_alignEnd="@id/tlCalculadora"
+        android:layout_marginRight="18dp"
+        android:layout_marginBottom="2dp"
+        app:borderWidth="0dp"
+        android:src="@drawable/clear"
+        app:fabSize="auto"
+        android:backgroundTint="#00BB86FC"
+        app:tint="#87B553"
+        />
+
     <TextView
         android:id="@+id/tvResultado"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="5dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:textColor="@color/white"
         android:fontFamily="@font/jost"
         android:text="Resultado:"
@@ -108,12 +113,12 @@
 
     <TextView
         android:id="@+id/tvPosInfi"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="5dp"
         android:layout_marginTop="14dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         android:textColor="@color/white"
         android:fontFamily="@font/jost"
         android:text="Pósfixa / Infixa:"
@@ -398,7 +403,7 @@
                 android:layout_height="90dp"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/edtradius"
-                android:backgroundTint="#8C9E3D"
+                android:backgroundTint="#87B553"
                 android:onClick="clickBotao"
                 android:text="C"
                 android:textColor="@color/black"
