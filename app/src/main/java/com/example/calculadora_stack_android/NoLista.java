@@ -1,3 +1,8 @@
+/**
+ @authors Nicoli Ferreira e Julia Flausino
+ @since 2022
+ */
+
 package com.example.calculadora_stack_android;
 
 public class NoLista<Dado extends Comparable<Dado>>

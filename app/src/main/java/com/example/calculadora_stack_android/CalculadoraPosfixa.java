@@ -1,3 +1,8 @@
+/**
+ @authors Nicoli Ferreira e Julia Flausino
+ @since 2022
+ */
+
 package com.example.calculadora_stack_android;
 
 import java.util.List;
